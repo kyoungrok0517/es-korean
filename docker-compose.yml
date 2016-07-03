@@ -1,0 +1,10 @@
+version: '2'
+services:
+    elastic-korean:
+        build: .
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+        volumes:
+            - ./config:/usr/share/elasticsearch/config
+            - ./esdata:/usr/share/elasticsearch/data
