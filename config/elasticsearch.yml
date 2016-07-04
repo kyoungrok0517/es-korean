@@ -1,0 +1,2 @@
+cluster.name: "elastic-korean"
+network.host: 0.0.0.0
