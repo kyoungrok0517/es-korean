@@ -1,10 +1,15 @@
 version: '2'
 services:
+    esdata:
+        image: busybox
+        volumes:
+            - /usr/share/elasticsearch/config/scripts
+            - /usr/share/elasticsearch/data
+        # command: mkdir -p /usr/share/elasticsearch/config/scripts && mkdir -p /usr/share/elasticsearch/data && ls /usr/share/elasticsearch
     elastic-korean:
         build: .
         ports:
             - "9200:9200"
             - "9300:9300"
-        volumes:
-            - ./config:/usr/share/elasticsearch/config
-            - ./esdata:/usr/share/elasticsearch/data
+        volumes_from:
+            - esdata
