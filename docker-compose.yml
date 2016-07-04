@@ -1,15 +1,20 @@
 version: '2'
 services:
     esdata:
+        container_name: "esdata"
         image: busybox
         volumes:
             - /usr/share/elasticsearch/config/scripts
             - /usr/share/elasticsearch/data
-        # command: mkdir -p /usr/share/elasticsearch/config/scripts && mkdir -p /usr/share/elasticsearch/data && ls /usr/share/elasticsearch
+            # - /usr/share/elasticsearch
     elastic-korean:
+        container_name: "elastic-korean"
         build: .
         ports:
             - "9200:9200"
             - "9300:9300"
         volumes_from:
             - esdata
+        environment:
+            ES_HEAP_SIZE: 4g
+        # log_driver: "json-file"

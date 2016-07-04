@@ -1,0 +1,1 @@
+ docker run --rm --volumes-from esdata -v $(pwd):/backup busybox tar cvf /backup/backup.tar /usr/share/elasticsearch
