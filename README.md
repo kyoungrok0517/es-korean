@@ -1,7 +1,7 @@
 # elasticsearch
 ## 개요
 - Elastic 공식 이미지에 elasticsearch-analysis-seunjeon (2.3.3.0) 적용한 이미지
-- 실행: `docker run --name=es-kr -d -p 9200:9200 -p 9300:9300 -v "$PWD/config":/usr/share/elasticsearch/config -v "$PWD/esdata":/usr/share/elasticsearch/data kyoungrok/elastic-korean`
+- 실행: `docker-compose up -d`
 
 ## 주의할 사항
 - `./config/scripts` 폴더가 없을 경우 마운트했을 때 실행이 되지 않음 
