@@ -1,8 +1,8 @@
 version: '2'
 services:
     esdata:
-        container_name: "esdata"
-        image: busybox
+        container_name: "elastic-korean-data"
+        image: ubuntu
         volumes:
             - /usr/share/elasticsearch/config/scripts
             - /usr/share/elasticsearch/data
